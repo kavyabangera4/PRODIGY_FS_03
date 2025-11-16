@@ -1,6 +1,6 @@
 # 🛍️ Local Store E-commerce Platform
 
-This project is a basic **Local Store E-commerce Platform** built using **Node.js, Express.js, MySQL, and EJS** as part of Task 3 in the internship at **Prodigy Infotech**.
+This project is a basic **Local Store E-commerce Platform** built using **Python,Flask,HTML,Tailwind CSS and MySQL** as part of Task 3 in the internship at **Prodigy Infotech**.
 
 ---
 
@@ -16,8 +16,8 @@ This project is a basic **Local Store E-commerce Platform** built using **Node.j
 
 ## 🛠️ Tech Stack
 
-- **Backend:** Node.js, Express.js
-- **Frontend:** HTML, CSS, EJS
+- **Backend:** Python Flask
+- **Frontend:** HTML, Tailwind CSS
 - **Database:** MySQL
 
 ---
@@ -27,13 +27,21 @@ This project is a basic **Local Store E-commerce Platform** built using **Node.j
 ```
 PRODIGY_FS_03/
 │
-├── app.js               # Main server file
-├── public/              # Static assets (CSS, images)
-│   └── images/
-├── views/              
-│   ├── index.ejs        # Home page
-│   └── cart.ejs         # Cart page
-└── README.md
+├── app.py
+├── config.py
+│
+├── static/
+│   ├── images/
+│       ├── shirts/
+│       └── shoes/
+│   
+├── templates/
+│   ├── index.html
+│   ├── cart.html
+│
+└── database/
+    └── schema.sql
+
 ```
 
 ---
@@ -50,16 +58,16 @@ PRODIGY_FS_03/
 1. Clone the repository  
 2. Install dependencies:  
    ```bash
-   npm install
+   pip install
    ```
 3. Start MySQL and import the above SQL
 4. Run the server:  
    ```bash
-   node app.js
+   python app.py
    ```
 5. Open browser:  
    ```
-   http://localhost:3000
+   http://127.0.0.1:5000
    ```
 
 ---
@@ -69,5 +77,5 @@ PRODIGY_FS_03/
 
 👤 Kavya Bangera  
 📧 [LinkedIn](https://www.linkedin.com/in/kavyabangera)  
-📂 [GitHub](https://github.com/kavyabangera4)
+
 
