@@ -40,7 +40,7 @@ PRODIGY_FS_03/
 │   ├── cart.html
 │
 └── database/
-    └── schema.sql
+    └── products.sql
 
 ```
 
