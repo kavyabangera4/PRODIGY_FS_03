@@ -21,16 +21,22 @@
 <h2 class="text-center text-xl font-bold">Filter by Category</h2>
 <div class="flex justify-center gap-4 my-4">
     <a href="/" class="px-4 py-2 bg-gray-300 rounded">All</a>
-    <a href="/?category=Shirt" class="px-4 py-2 bg-gray-300 rounded">Shirts</a>
-    <a href="/?category=Shoe" class="px-4 py-2 bg-gray-300 rounded">Shoes</a>
+    <!-- Use the exact category names from your DB (capitalization doesn't matter now) -->
+    <a href="/?category=Shirts" class="px-4 py-2 bg-gray-300 rounded">Shirts</a>
+    <a href="/?category=Shoes" class="px-4 py-2 bg-gray-300 rounded">Shoes</a>
+    <a href="/?category=Bags" class="px-4 py-2 bg-gray-300 rounded">Bags</a>
+    <a href="/?category=Accessories" class="px-4 py-2 bg-gray-300 rounded">Accessories</a>
 </div>
 
 <!-- Product Grid -->
-<div class="grid grid-cols-4 gap-6 px-10">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6">
 
     {% for p in products %}
     <div class="bg-white p-4 shadow rounded-lg border">
-        <img src="{{ url_for('static', filename=p.image_path) }}" class="h-48 w-full object-cover">
+        <!-- If your DB column is `image_path` change the next line to p.image_path -->
+    <img src="{{ url_for('static', filename=p.image.lstrip('/')) }}" 
+     class="h-48 w-full object-cover rounded mb-3" alt="{{ p.name }}">
+
 
         <h3 class="font-bold mt-2">{{ p.name }}</h3>
         <p class="text-lg">₹{{ p.price }}</p>

@@ -12,6 +12,9 @@
 </div>
 
 <div class="p-10">
+{% if items|length == 0 %}
+    <p class="text-gray-600">Your cart is empty.</p>
+{% else %}
 <table class="w-full bg-white shadow text-center">
     <tr class="border-b">
         <th class="p-3">Product</th>
@@ -24,7 +27,8 @@
         <td class="p-3">{{ i.name }}</td>
         <td class="p-3">₹{{ i.price }}</td>
         <td class="p-3">
-            <a href="/remove/{{ i.cart_id }}" class="text-red-600 font-bold">Remove</a>
+            <!-- use product id, matches the route -->
+            <a href="/remove/{{ i.id }}" class="text-red-600 font-bold">Remove</a>
         </td>
     </tr>
     {% endfor %}
@@ -37,7 +41,7 @@
 <a href="/" class="mt-6 inline-block bg-green-600 text-white px-4 py-2 rounded">
     ← Continue Shopping
 </a>
-
+{% endif %}
 </div>
 
 </body>
