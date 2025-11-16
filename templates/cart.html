@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+<div class="bg-blue-600 text-white text-center py-4 text-2xl font-bold">
+    Your Shopping Cart
+</div>
+
+<div class="p-10">
+<table class="w-full bg-white shadow text-center">
+    <tr class="border-b">
+        <th class="p-3">Product</th>
+        <th class="p-3">Price</th>
+        <th class="p-3">Action</th>
+    </tr>
+
+    {% for i in items %}
+    <tr class="border-b">
+        <td class="p-3">{{ i.name }}</td>
+        <td class="p-3">₹{{ i.price }}</td>
+        <td class="p-3">
+            <a href="/remove/{{ i.cart_id }}" class="text-red-600 font-bold">Remove</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<div class="text-xl font-bold mt-6">
+    Total: ₹{{ total }}
+</div>
+
+<a href="/" class="mt-6 inline-block bg-green-600 text-white px-4 py-2 rounded">
+    ← Continue Shopping
+</a>
+
+</div>
+
+</body>
+</html>
